@@ -1,0 +1,33 @@
+import time
+
+print("Vítejte v dobrodružné hře!")
+print("Jsi odvážný hrdina a před tebou jsou tři cesty.")
+
+while True:
+    print("Vyber si cestu:")
+    print("1. Cesta lesa")
+    print("2. Cesta horami")
+    print("3. Cesta jeskyní")
+
+    choice = input("Zadej číslo cesty (1/2/3): ")
+
+    if choice == "1":
+        print("Procházíš temným lesem...")
+        time.sleep(2)
+        print("Zde narazíš na skřeta!")
+    elif choice == "2":
+        print("Vystupuješ strmými horami...")
+        time.sleep(2)
+        print("Na vrcholu hor objevuješ starodávný meč!")
+    elif choice == "3":
+        print("Vstupuješ do tajemné jeskyně...")
+        time.sleep(2)
+        print("V jeskyni narazíš na draka!")
+    else:
+        print("Neplatná volba. Zkus to znovu.")
+        continue
+
+    play_again = input("Chceš hrát znovu? (ano/ne): ")
+    if play_again.lower() != "ano":
+        print("Děkujeme za hru! Nashledanou.")
+        break
