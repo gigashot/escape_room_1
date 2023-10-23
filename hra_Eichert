@@ -1,33 +1,51 @@
 import time
+import random
 
 print("Vítejte v dobrodružné hře!")
 print("Jsi odvážný hrdina a před tebou jsou tři cesty.")
-
-while True:
+# zivoty = 3
+# if zivoty == 0:
+#     print("ummřel jsi")
+    
+def vyber_cesty():
     print("Vyber si cestu:")
-    print("1. Cesta lesa")
-    print("2. Cesta horami")
-    print("3. Cesta jeskyní")
+    print("1. Cesta levá")
+    print("2. Cesta prostřední")
+    print("3. Cesta pravá")
 
-    choice = input("Zadej číslo cesty (1/2/3): ")
+    vyber = input("Zadej číslo cesty (1/2/3): ")
 
-    if choice == "1":
-        print("Procházíš temným lesem...")
+    if vyber == "1":
+        print("Procházíš levou chodbou a narazíš na 1. místnost")
         time.sleep(2)
-        print("Zde narazíš na skřeta!")
-    elif choice == "2":
-        print("Vystupuješ strmými horami...")
-        time.sleep(2)
-        print("Na vrcholu hor objevuješ starodávný meč!")
-    elif choice == "3":
-        print("Vstupuješ do tajemné jeskyně...")
-        time.sleep(2)
-        print("V jeskyni narazíš na draka!")
-    else:
-        print("Neplatná volba. Zkus to znovu.")
-        continue
+        print("Zde narazíš na skřeta! Ten tě vyzval na hru v kostkách")
 
-    play_again = input("Chceš hrát znovu? (ano/ne): ")
-    if play_again.lower() != "ano":
-        print("Děkujeme za hru! Nashledanou.")
-        break
+        def hod_kostkou():
+            return random.randint(1, 6)
+        def kostky_s_skretem():
+            print("1. přijmout hrát kostky")
+            print("2. odmítnout hrát kostky")
+
+        volba = input("Vyber možnost (1/2): ")
+                
+
+
+
+    
+    # elif vyber == "2":
+    #     print("Vystupuješ strmými horami...")
+    #     time.sleep(2)
+    #     print("Na vrcholu hor objevuješ starodávný meč!")
+    # elif vyber == "3":
+    #     print("Vstupuješ do tajemné jeskyně...")
+    #     time.sleep(2)
+    #     print("V jeskyni narazíš na draka!")
+    # else:
+    #     print("Neplatná volba. Zkus to znovu.")
+    #     continue
+
+    # play_again = input("Chceš hrát znovu? (ano/ne): ")
+    # if play_again.lower() != "ano":
+    #     print("Děkujeme za hru! Nashledanou.")
+    #     break
+    
