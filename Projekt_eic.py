@@ -1,44 +1,38 @@
-import time
 import random
-print("Vítejte v dobrodružné hře!")
-print("Jsi v labyrintu a máš na výběr ze tří chodeb.")
+import time
+zivoty = 10
+def boss_fight():
+    print("Vítej v posledním souboji! Čelíš ohromnému prasopsovi.")
+    global zivoty
+    zivoty_prasopes = 15
 
-while True:
-    print("1. chodba levá ")
-    print("2. chodba prostřední ")
-    print("3. chodba pravá ")
+    while zivoty > 0 and zivoty_prasopes > 0:
+        print(f"\nZbývá ti {zivoty} životů. Prasopes má {zivoty_prasopes} životů.")
+        volba = input("Co uděláš? (heal/meč): ").lower()
 
-    vyber = input("Zvolte cestu (1/2/3): ")
+        if volba == "heal":
+            heal_sila = random.randint(2, 5)
+            print(f"Vyléčili jste si {heal_sila} hp.")
+            zivoty += heal_sila
 
-    if vyber == "1":
-        print("procházíte tajemnou chodbou...")
-        time.sleep(2)
-        print("Narazíte na místnost, ve které sedí zelený skřet.")
-        print("Skřet vás vyzývá na soutěž v kostkách.")
-        
-        vyber_hry_kostek = input("přijmte jeho nabídku ?(1/2): ")
-        if vyber_hry_kostek == 1:
-         hraci_kostka = random.randint(1, 6)
-         print("házej první...")
-         time.sleep(1)
-         print("kostka se kutálí")
-         time.sleep(1)
-         print(f"kostka se přetočila, a je to {hraci_kostka}")
+            # Check if the player's health exceeds the maximum
+            if zivoty > 5:
+                zivoty = 5  # Set it to the maximum health
+        elif volba == "meč":
+            utok_mece = random.randint(1, 4)
+            print(f"Zasadil jsi prasopsovi úder mečem se silou {utok_mece}.")
+            zivoty_prasopes -= utok_mece
+        else:
+            print("Neplatná volba. Přišel jsi o příležitost na útok")
 
-         
+        utok_prasopes = random.randint(1, 5)
+        print(f"Prasopes tě zaútočil s silou {utok_prasopes}.")
+        zivoty -= utok_prasopes
 
-        break
+        time.sleep(1)
 
-
-    elif vyber == "2":
-        print("Vystupujete strmou horu...")
-        time.sleep(2)
-        print("Na vrcholu hory objevujete poklad. Jste bohatý! Konec hry.")
-        break
-    elif vyber == "3":
-        print("Putojete rozpálenou pouští...")
-        time.sleep(2)
-        print("Narazíte na oázu, kde potkáte kouzelného džina. Dává vám tři přání. Konec hry.")
-        break
+    if zivoty <= 0:
+        print("Bohužel, prasopes tě porazil. Konec hry.")
     else:
-        print("Neplatná volba. Zkuste to znovu.")
+        print("Gratulujeme, porazil jsi ohromného prasopsa!")
+boss_fight()
