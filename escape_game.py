@@ -3,13 +3,13 @@ import random
 
 print("Vítejte v dobrodružné hře!")
 print("Jsi v labyrintu a máš na výběr ze tří chodeb.")
-zivoty = 5  # Počáteční počet životů
+zivoty = 5 
 
 nemoc_hrdina = [""]
 
 
 def vyber_chodby():
-    global zivoty  # Použití globalu pro změnu hodnoty v globálním rozsahu
+    global zivoty  
     
     while True:
         print("1. chodba levá")
