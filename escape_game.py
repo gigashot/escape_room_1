@@ -115,7 +115,7 @@ def vyber_chodby():
             else:
                 print("Rozhodl jsi se neúčastnit se soutěže. Skřet tě bodne kudlou do břicha a umíráš")
                 print("prohrál jsi hru")
-                break
+                return
         else:
             print("Neplatná volba. Zkuste to znovu.")
     time.sleep(1)
